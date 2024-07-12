@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils'
-import { type Product } from '@/data/products';
+import { type Product, NO_PROJECT_MESSAGE } from '@/data/products';
 import ProductList from '@/components/ProductList.vue';
 describe('ProductList', () => {
 
@@ -13,6 +13,11 @@ describe('ProductList', () => {
         const wrapper = mount(ProductList, { props: { products }})
         const items = wrapper.findAll('[data-test="product-item"]')
         expect(items.length).toBe(products.length)
+    })
+
+    it("Should display a message when no projects are specified", () => {
+        const wrapper = mount(ProductList, { props: { products: [] }})
+        expect(wrapper.text()).toContain(NO_PROJECT_MESSAGE)
     })
 })
 

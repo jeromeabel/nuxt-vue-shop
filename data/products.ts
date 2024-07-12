@@ -4,6 +4,9 @@ export type Product = {
     price: number;
 }
 
+export const NO_PROJECT_MESSAGE = "No projects found, please try again"
+export const SEARCH_PRODUCT_MESSAGE = "Search products..."
+
 export const products : Product[] = [
     { id: 1, name: "Nerd-o-Vision", price: 19.99 },
     { id: 2, name: "Smarty Pants Spectacles", price: 24.99 },
