@@ -9,7 +9,7 @@ const handleInput = (event: Event) => {
 </script>
 
 <template>
-  <div class="border-b py-8">
-    <input class="border py-2 px-4" @input="handleInput" type="text" :placeholder="placeholder" />
+  <div>
+    <input class=" border py-2 px-4" @input="handleInput" type="text" :placeholder="placeholder" />
   </div>
 </template>
