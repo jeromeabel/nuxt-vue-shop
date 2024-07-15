@@ -4,9 +4,9 @@ defineProps<{ product: Product }>()
 </script>
 
 <template>
-    <div>
-        <h2>{{ product.name }}</h2>
-        <p>{{ product.price }}</p>
-        <a :href="`/product/${product.id}`">{{ product.id }}</a>
+    <div class="rounded p-8 border">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.price }}$</p>
+        <a :href="`/product/${product.id}`" class="underline">Link</a>
     </div>
 </template>

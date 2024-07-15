@@ -2,16 +2,15 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils'
 import ProductSearch from '@/components/ProductSearch.vue';
-import { SEARCH_PRODUCT_MESSAGE } from '~/data/products';
 
 describe('ProductSearch', () => {
 
     it('Should render the input element', async () => {
-        const wrapper = await mount(ProductSearch);
+        const wrapper = await mount(ProductSearch, { props: { placeholder: "PLACEHOLDER" } });
         const input = wrapper.find('input[type="text"]');
 
         expect(input.exists()).toBe(true);
-        expect(input.attributes('placeholder')).toBe(SEARCH_PRODUCT_MESSAGE);
+        expect(input.attributes('placeholder')).toBe("PLACEHOLDER");
       });
 
 

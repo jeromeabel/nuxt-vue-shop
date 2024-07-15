@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { SEARCH_PRODUCT_MESSAGE } from '@/data/products';
 const emit = defineEmits(['update:search'])
+defineProps<{ placeholder?: string }>()
 
 const handleInput = (event: Event) => {
   const input = (event.target as HTMLInputElement).value;
@@ -9,7 +9,7 @@ const handleInput = (event: Event) => {
 </script>
 
 <template>
-  <div>
-    <input @input="handleInput" type="text" :placeholder="SEARCH_PRODUCT_MESSAGE" />
+  <div class="border-b py-8">
+    <input class="border py-2 px-4" @input="handleInput" type="text" :placeholder="placeholder" />
   </div>
 </template>
