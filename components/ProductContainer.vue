@@ -6,15 +6,18 @@
 */
 
 import { useProducts } from '@/composables/useProducts'
-import { products, MESSAGE } from '@/data/products';
+import { products, MESSAGE, productsOptions } from '@/data/products';
 
-const { filteredProducts, updateSearchTerm } = useProducts(products)
+const { filteredProducts, updateSearchTerm, updateOptions } = useProducts(products)
 </script>
 
 <template>
     <div class="flex flex-col gap-4">
         <h2 class="text-4xl font-semibold">Product Shop</h2>
-        <ProductSearch @update:search="updateSearchTerm" :placeholder="MESSAGE.SEARCH_PLACEHOLDER" />
+        <div class="flex gap-4">
+            <ProductSearch @update:search="updateSearchTerm" :placeholder="MESSAGE.SEARCH_PLACEHOLDER" />
+            <ProductOptions @update:options="updateOptions" :options="productsOptions"/>
+        </div>
         <ProductList :products="filteredProducts" :message="MESSAGE.NO_PRODUCTS_FOUND" />
     </div>
 </template>
